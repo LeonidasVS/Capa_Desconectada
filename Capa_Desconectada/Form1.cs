@@ -27,6 +27,22 @@ namespace Capa_Desconectada
             var customers = adaptador.GetData();
             gridTipado.DataSource = customers;
         }
+
+        private void btnBuscarT_Click(object sender, EventArgs e)
+        {
+            var customer = adaptador.GetDataByCustomerID(txtBuscarT.Text);
+
+            if (customer!=null)
+            {
+                var objeto = customerRepository.ExtraerInfoCliente(customer);
+                //var listaClientes = new List<Customer> { objeto };
+                //gridTipado.DataSource = listaClientes;
+
+                var encontrado = objeto.CompanyName;
+
+                txtEncontrado2.Text = encontrado;
+            }
+        }
         #endregion
 
 
@@ -40,6 +56,21 @@ namespace Capa_Desconectada
         private void btnBuscarNT_Click(object sender, EventArgs e)
         {
             var cliente = customerRepository.ObetenerPorId(txtBuscarNT.Text);
+
+            if (cliente==null)
+            {
+                MessageBox.Show("No encontrado", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                //var listaClientes = new List<Customer> { cliente };
+                //gridNoTipado.DataSource = listaClientes;
+
+                var encontrado = cliente.CompanyName;
+
+                txtEncontrado.Text = encontrado;
+
+            }
         }
         #endregion
     }
