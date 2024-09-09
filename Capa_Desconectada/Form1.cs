@@ -20,23 +20,26 @@ namespace Capa_Desconectada
             InitializeComponent();
         }
 
-
-        #region No tipado
-        private CustomerRepository customer = new CustomerRepository();
-        private void btnObtenerNoTipado_Click(object sender, EventArgs e)
-        {
-
-            gridNoTipado.DataSource = customer.ObtenerTodos();
-
-        }
-        #endregion
-
         #region tipado
         CustomersTableAdapter adaptador = new CustomersTableAdapter();
         private void btnObtenerTipado_Click(object sender, EventArgs e)
         {
-            var customer = adaptador.GetData();
-            gridTipado.DataSource = customer;
+            var customers = adaptador.GetData();
+            gridTipado.DataSource = customers;
+        }
+        #endregion
+
+
+        #region no tipado
+        private CustomerRepository customerRepository = new CustomerRepository();
+        private void btnObtenerNoTipado_Click_1(object sender, EventArgs e)
+        {
+            gridNoTipado.DataSource = customerRepository.Obtenertodos();
+        }
+
+        private void btnBuscarNT_Click(object sender, EventArgs e)
+        {
+            var cliente = customerRepository.ObetenerPorId(txtBuscarNT.Text);
         }
         #endregion
     }
