@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capa_Desconectada", "Capa_Desconectada\Capa_Desconectada.csproj", "{AF3F0B25-DC61-478A-9312-AD9F37B1FF02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoDatos", "AccesoDatos\AccesoDatos.csproj", "{AE19589C-6099-4AFB-9CE9-B3A3B880A894}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF3F0B25-DC61-478A-9312-AD9F37B1FF02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF3F0B25-DC61-478A-9312-AD9F37B1FF02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF3F0B25-DC61-478A-9312-AD9F37B1FF02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF3F0B25-DC61-478A-9312-AD9F37B1FF02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE19589C-6099-4AFB-9CE9-B3A3B880A894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE19589C-6099-4AFB-9CE9-B3A3B880A894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE19589C-6099-4AFB-9CE9-B3A3B880A894}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE19589C-6099-4AFB-9CE9-B3A3B880A894}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E017F378-A6EB-4D2C-B963-D56C9E608185}
+	EndGlobalSection
+EndGlobal

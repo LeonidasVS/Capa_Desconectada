@@ -1,0 +1,10 @@
+C:\Users\USUARIO\OneDrive\Documentos\ClasesProgra-II\Clase 06-09-2024\Capa_Desconectada\Capa_Desconectada\bin\Debug\Capa_Desconectada.exe.config
+C:\Users\USUARIO\OneDrive\Documentos\ClasesProgra-II\Clase 06-09-2024\Capa_Desconectada\Capa_Desconectada\bin\Debug\Capa_Desconectada.exe
+C:\Users\USUARIO\OneDrive\Documentos\ClasesProgra-II\Clase 06-09-2024\Capa_Desconectada\Capa_Desconectada\bin\Debug\Capa_Desconectada.pdb
+C:\Users\USUARIO\OneDrive\Documentos\ClasesProgra-II\Clase 06-09-2024\Capa_Desconectada\Capa_Desconectada\obj\Debug\Capa_Desconectada.csproj.AssemblyReference.cache
+C:\Users\USUARIO\OneDrive\Documentos\ClasesProgra-II\Clase 06-09-2024\Capa_Desconectada\Capa_Desconectada\obj\Debug\Capa_Desconectada.Form1.resources
+C:\Users\USUARIO\OneDrive\Documentos\ClasesProgra-II\Clase 06-09-2024\Capa_Desconectada\Capa_Desconectada\obj\Debug\Capa_Desconectada.Properties.Resources.resources
+C:\Users\USUARIO\OneDrive\Documentos\ClasesProgra-II\Clase 06-09-2024\Capa_Desconectada\Capa_Desconectada\obj\Debug\Capa_Desconectada.csproj.GenerateResource.cache
+C:\Users\USUARIO\OneDrive\Documentos\ClasesProgra-II\Clase 06-09-2024\Capa_Desconectada\Capa_Desconectada\obj\Debug\Capa_Desconectada.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\OneDrive\Documentos\ClasesProgra-II\Clase 06-09-2024\Capa_Desconectada\Capa_Desconectada\obj\Debug\Capa_Desconectada.exe
+C:\Users\USUARIO\OneDrive\Documentos\ClasesProgra-II\Clase 06-09-2024\Capa_Desconectada\Capa_Desconectada\obj\Debug\Capa_Desconectada.pdb
