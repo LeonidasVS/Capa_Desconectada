@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AccesoDatos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,31 +18,12 @@ namespace Capa_Desconectada
         {
             InitializeComponent();
         }
+        private CustomerRepository customer = new CustomerRepository();
 
         private void btnObtenerNoTipado_Click(object sender, EventArgs e)
         {
-            DataTable dataTable = new DataTable();
 
-            String selectALl = "";
-            selectALl = selectALl + "SELECT [CustomerID] " + "\n";
-            selectALl = selectALl + "      ,[CompanyName] " + "\n";
-            selectALl = selectALl + "      ,[ContactName] " + "\n";
-            selectALl = selectALl + "      ,[ContactTitle] " + "\n";
-            selectALl = selectALl + "      ,[Address] " + "\n";
-            selectALl = selectALl + "      ,[City] " + "\n";
-            selectALl = selectALl + "      ,[Region] " + "\n";
-            selectALl = selectALl + "      ,[PostalCode] " + "\n";
-            selectALl = selectALl + "      ,[Country] " + "\n";
-            selectALl = selectALl + "      ,[Phone] " + "\n";
-            selectALl = selectALl + "      ,[Fax] " + "\n";
-            selectALl = selectALl + "  FROM [dbo].[Customers]";
-
-            var conexion = @"Data Source=DESKTOP-5R5EQO8\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True;";
-            SqlDataAdapter adapter = new SqlDataAdapter(selectALl,conexion);
-
-            adapter.Fill(dataTable);
-            gridNoTipado.DataSource = dataTable;
-
+            gridNoTipado.DataSource = customer.ObtenerTodos();
 
         }
     }
