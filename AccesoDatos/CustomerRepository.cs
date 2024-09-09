@@ -82,6 +82,7 @@ namespace AccesoDatos
                 customer.Country = fila.Field<string>("Country");
                 customer.Phone = fila.Field<string>("Phone");
                 customer.Fax = fila.Field<string>("Fax");
+
             }
             return customer;
         }
