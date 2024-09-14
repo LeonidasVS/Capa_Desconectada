@@ -6,7 +6,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -38,9 +40,7 @@ namespace Capa_Desconectada
                 //var listaClientes = new List<Customer> { objeto };
                 //gridTipado.DataSource = listaClientes;
 
-                var encontrado = objeto.CompanyName;
-
-                txtEncontrado2.Text = encontrado;
+                txtEncontrado2.Text = objeto.CompanyName;
             }
         }
         #endregion
@@ -56,7 +56,7 @@ namespace Capa_Desconectada
         private void btnBuscarNT_Click(object sender, EventArgs e)
         {
             var cliente = customerRepository.ObetenerPorId(txtBuscarNT.Text);
-
+    
             if (cliente==null)
             {
                 MessageBox.Show("No encontrado", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -66,12 +66,48 @@ namespace Capa_Desconectada
                 //var listaClientes = new List<Customer> { cliente };
                 //gridNoTipado.DataSource = listaClientes;
 
-                var encontrado = cliente.CompanyName;
-
-                txtEncontrado.Text = encontrado;
+                txtEncontrado.Text = cliente.CompanyName;
 
             }
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            var cliente = CrearCliente();
+            int resultado = customerRepository.InsertarCliente(cliente);
+
+            if (resultado > 0)
+            {
+                MessageBox.Show("Cliente insertado con EXITO", "Insercion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("Cliente insertado NO INSERTADO", "Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private Customer CrearCliente()
+        {
+            var cliente = new Customer
+            {
+                CustomerID = txtCustomerID.Text,
+                CompanyName = txtCompanyName.Text,
+                ContactName = txtContactName.Text,
+                ContactTitle = txtContactTitle.Text,
+                Address = txtAddres.Text
+            };
+            return cliente;
+        }
         #endregion
+
+        private void Limpiar()
+        {
+            txtCustomerID.Text = "";
+            txtCompanyName.Text = "";
+            txtContactName.Text = "";
+            txtContactTitle.Text = "";
+            txtAddres.Text = "";
+        }
     }
 }

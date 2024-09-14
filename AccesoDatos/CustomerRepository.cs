@@ -86,6 +86,39 @@ namespace AccesoDatos
             }
             return customer;
         }
+
+        public int InsertarCliente(Customer cliente)
+        {
+            using (var conexion = DataBase.SqlConnection())
+            {
+                String insertIntoPorId = "";
+                insertIntoPorId = insertIntoPorId + "INSERT INTO [dbo].[Customers] " + "\n";
+                insertIntoPorId = insertIntoPorId + "           ([CustomerID] " + "\n";
+                insertIntoPorId = insertIntoPorId + "           ,[CompanyName] " + "\n";
+                insertIntoPorId = insertIntoPorId + "           ,[ContactName] " + "\n";
+                insertIntoPorId = insertIntoPorId + "           ,[ContactTitle] " + "\n";
+                insertIntoPorId = insertIntoPorId + "           ,[Address])" + "\n";
+                insertIntoPorId = insertIntoPorId + "     VALUES " + "\n";
+                insertIntoPorId = insertIntoPorId + "           (@CustomerID " + "\n";
+                insertIntoPorId = insertIntoPorId + "           ,@CompanyName " + "\n";
+                insertIntoPorId = insertIntoPorId + "           ,@ContactName " + "\n";
+                insertIntoPorId = insertIntoPorId + "           ,@ContactTitle " + "\n";
+                insertIntoPorId = insertIntoPorId + "           ,@Address)";
+
+                using (var comando=new SqlCommand(insertIntoPorId,conexion))
+                {
+                    comando.Parameters.AddWithValue("@CustomerID", cliente.CustomerID);
+                    comando.Parameters.AddWithValue("@CompanyName", cliente.CompanyName);
+                    comando.Parameters.AddWithValue("@ContactName", cliente.ContactName);
+                    comando.Parameters.AddWithValue("@ContactTitle", cliente.ContactTitle);
+                    comando.Parameters.AddWithValue("@Address", cliente.Address);
+
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    adaptador.InsertCommand = comando;
+                    return adaptador.InsertCommand.ExecuteNonQuery();
+                }
+            }
+        }
     }
 
 }
