@@ -107,17 +107,44 @@ namespace AccesoDatos
 
                 using (var comando=new SqlCommand(insertIntoPorId,conexion))
                 {
-                    comando.Parameters.AddWithValue("@CustomerID", cliente.CustomerID);
-                    comando.Parameters.AddWithValue("@CompanyName", cliente.CompanyName);
-                    comando.Parameters.AddWithValue("@ContactName", cliente.ContactName);
-                    comando.Parameters.AddWithValue("@ContactTitle", cliente.ContactTitle);
-                    comando.Parameters.AddWithValue("@Address", cliente.Address);
-
+                    SqlCommand comando2 = parametrosCustomer(comando, cliente);
                     SqlDataAdapter adaptador = new SqlDataAdapter(comando);
                     adaptador.InsertCommand = comando;
                     return adaptador.InsertCommand.ExecuteNonQuery();
                 }
             }
+        }
+
+        public int ActualizarCliente(Customer cliente)
+        {
+            using (var conexion = DataBase.SqlConnection())
+            {
+                String updateUser = "";
+                updateUser = updateUser + "UPDATE [dbo].[Customers] " + "\n";
+                updateUser = updateUser + "   SET [CustomerID] = @CustomerID " + "\n";
+                updateUser = updateUser + "      ,[CompanyName] = @CompanyName " + "\n";
+                updateUser = updateUser + "      ,[ContactName] = @ContactName " + "\n";
+                updateUser = updateUser + "      ,[ContactTitle] = @ContactTitle " + "\n";
+                updateUser = updateUser + "      ,[Address] = @Address " + "\n";
+                updateUser = updateUser + " WHERE CustomerID = @CustomerID";
+
+                using (var comando=new SqlCommand(updateUser,conexion)) {
+                    SqlCommand comando2 = parametrosCustomer(comando, cliente);
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    adapter.UpdateCommand= comando;
+                    return adapter.UpdateCommand.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public SqlCommand parametrosCustomer(SqlCommand comando, Customer cliente)
+        {
+            comando.Parameters.AddWithValue("@CustomerID", cliente.CustomerID);
+            comando.Parameters.AddWithValue("@CompanyName", cliente.CompanyName);
+            comando.Parameters.AddWithValue("@ContactName", cliente.ContactName);
+            comando.Parameters.AddWithValue("@ContactTitle", cliente.ContactTitle);
+            comando.Parameters.AddWithValue("@Address", cliente.Address);
+            return comando;
         }
     }
 

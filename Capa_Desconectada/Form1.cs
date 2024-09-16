@@ -22,6 +22,22 @@ namespace Capa_Desconectada
             InitializeComponent();
         }
 
+        private void RellenarCampos(Customer cliente)
+        {
+            if (cliente!=null)
+            {
+                txtCustomerID.Text = cliente.CustomerID;
+                txtCompanyName.Text = cliente.CompanyName;
+                txtContactName.Text = cliente.ContactName;
+                txtAddres.Text = cliente.Address;
+                txtContactTitle.Text = cliente.ContactTitle;
+
+            }
+            else if(cliente==null)
+            {
+                MessageBox.Show("Objeto no encontrado");
+            }
+        }
         #region tipado
         CustomersTableAdapter adaptador = new CustomersTableAdapter();
         private void btnObtenerTipado_Click(object sender, EventArgs e)
@@ -78,7 +94,10 @@ namespace Capa_Desconectada
                 //var listaClientes = new List<Customer> { cliente };
                 //gridNoTipado.DataSource = listaClientes;
 
-                txtEncontrado.Text = cliente.CompanyName;
+                //txtEncontrado.Text = cliente.CompanyName;
+                var listad = new List<Customer> { cliente };
+                gridNoTipado.DataSource = listad;
+                RellenarCampos(cliente);
 
             }
         }
@@ -112,7 +131,13 @@ namespace Capa_Desconectada
             return cliente;
         }
 
-
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            var cliente = CrearCliente();
+            var actulaizadas = customerRepository.ActualizarCliente(cliente);
+            MessageBox.Show($"{actulaizadas} filas actulizadas");
+            Limpiar();
+        }
         #endregion
 
         private void Limpiar()
