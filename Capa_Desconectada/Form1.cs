@@ -43,6 +43,18 @@ namespace Capa_Desconectada
                 txtEncontrado2.Text = objeto.CompanyName;
             }
         }
+        private void btnInsertarT_Click(object sender, EventArgs e)
+        {
+            var cliente = CrearCliente();
+            int resutado=adaptador.Insert(cliente.CustomerID, cliente.CompanyName, cliente.ContactName, cliente.ContactTitle, cliente.Address,
+                cliente.City, cliente.Region, cliente.PostalCode, cliente.Country, cliente.Phone, cliente.Fax);
+
+            if (resutado>0)
+            {
+                MessageBox.Show("Se ingreso");
+                Limpiar();
+            }
+        }
         #endregion
 
 
@@ -99,6 +111,8 @@ namespace Capa_Desconectada
             };
             return cliente;
         }
+
+
         #endregion
 
         private void Limpiar()
