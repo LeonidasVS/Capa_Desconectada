@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtEncontrado2 = new System.Windows.Forms.TextBox();
+            this.btnInsertarT = new System.Windows.Forms.Button();
             this.btnBuscarT = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnObtenerTipado = new System.Windows.Forms.Button();
             this.txtBuscarT = new System.Windows.Forms.TextBox();
             this.gridTipado = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtEncontrado = new System.Windows.Forms.TextBox();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.btnBuscarNT = new System.Windows.Forms.Button();
             this.Buscar = new System.Windows.Forms.Label();
             this.txtBuscarNT = new System.Windows.Forms.TextBox();
@@ -53,8 +53,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnInsertarT = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnActualizarTipado = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTipado)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -63,8 +63,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnInsertarT);
-            this.groupBox1.Controls.Add(this.txtEncontrado2);
+            this.groupBox1.Controls.Add(this.btnActualizarTipado);
             this.groupBox1.Controls.Add(this.btnBuscarT);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnObtenerTipado);
@@ -77,12 +76,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DataSet Tipado";
             // 
-            // txtEncontrado2
+            // btnInsertarT
             // 
-            this.txtEncontrado2.Location = new System.Drawing.Point(124, 317);
-            this.txtEncontrado2.Name = "txtEncontrado2";
-            this.txtEncontrado2.Size = new System.Drawing.Size(100, 20);
-            this.txtEncontrado2.TabIndex = 6;
+            this.btnInsertarT.Location = new System.Drawing.Point(788, 362);
+            this.btnInsertarT.Name = "btnInsertarT";
+            this.btnInsertarT.Size = new System.Drawing.Size(199, 29);
+            this.btnInsertarT.TabIndex = 8;
+            this.btnInsertarT.Text = "Guardar Tipado";
+            this.btnInsertarT.UseVisualStyleBackColor = true;
+            this.btnInsertarT.Click += new System.EventHandler(this.btnInsertarT_Click);
             // 
             // btnBuscarT
             // 
@@ -131,7 +133,6 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnActualizar);
-            this.groupBox2.Controls.Add(this.txtEncontrado);
             this.groupBox2.Controls.Add(this.btnBuscarNT);
             this.groupBox2.Controls.Add(this.Buscar);
             this.groupBox2.Controls.Add(this.txtBuscarNT);
@@ -144,12 +145,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DataSet no Tipado";
             // 
-            // txtEncontrado
+            // btnActualizar
             // 
-            this.txtEncontrado.Location = new System.Drawing.Point(117, 313);
-            this.txtEncontrado.Name = "txtEncontrado";
-            this.txtEncontrado.Size = new System.Drawing.Size(100, 20);
-            this.txtEncontrado.TabIndex = 5;
+            this.btnActualizar.Location = new System.Drawing.Point(190, 352);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.TabIndex = 6;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnBuscarNT
             // 
@@ -277,39 +281,41 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(784, 335);
+            this.btnGuardar.Location = new System.Drawing.Point(784, 315);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(203, 26);
             this.btnGuardar.TabIndex = 8;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Text = "Guardar no Tipado";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnInsertarT
+            // btnActualizarTipado
             // 
-            this.btnInsertarT.Location = new System.Drawing.Point(193, 358);
-            this.btnInsertarT.Name = "btnInsertarT";
-            this.btnInsertarT.Size = new System.Drawing.Size(96, 23);
-            this.btnInsertarT.TabIndex = 8;
-            this.btnInsertarT.Text = "Guardar Tipado";
-            this.btnInsertarT.UseVisualStyleBackColor = true;
-            this.btnInsertarT.Click += new System.EventHandler(this.btnInsertarT_Click);
+            this.btnActualizarTipado.Location = new System.Drawing.Point(206, 355);
+            this.btnActualizarTipado.Name = "btnActualizarTipado";
+            this.btnActualizarTipado.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizarTipado.TabIndex = 7;
+            this.btnActualizarTipado.Text = "Actualizar";
+            this.btnActualizarTipado.UseVisualStyleBackColor = true;
+            this.btnActualizarTipado.Click += new System.EventHandler(this.btnActualizarTipado_Click);
             // 
-            // btnActualizar
+            // btnLimpiar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(190, 352);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizar.TabIndex = 6;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            this.btnLimpiar.Location = new System.Drawing.Point(927, 415);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 8;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 450);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.btnInsertarT);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -350,8 +356,6 @@
         private System.Windows.Forms.Button btnBuscarT;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBuscarT;
-        private System.Windows.Forms.TextBox txtEncontrado2;
-        private System.Windows.Forms.TextBox txtEncontrado;
         private System.Windows.Forms.TextBox txtContactTitle;
         private System.Windows.Forms.TextBox txtContactName;
         private System.Windows.Forms.TextBox txtCompanyName;
@@ -365,6 +369,8 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnInsertarT;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnActualizarTipado;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }
 

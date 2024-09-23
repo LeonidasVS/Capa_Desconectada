@@ -24,7 +24,7 @@ namespace Capa_Desconectada
 
         private void RellenarCampos(Customer cliente)
         {
-            if (cliente!=null)
+            if (cliente != null)
             {
                 txtCustomerID.Text = cliente.CustomerID;
                 txtCompanyName.Text = cliente.CompanyName;
@@ -33,11 +33,29 @@ namespace Capa_Desconectada
                 txtContactTitle.Text = cliente.ContactTitle;
 
             }
-            else if(cliente==null)
+            else if (cliente == null)
             {
                 MessageBox.Show("Objeto no encontrado");
             }
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+            txtCustomerID.Enabled = true;
+        }
+
+        private void Limpiar()
+        {
+            txtCustomerID.Text = "";
+            txtCompanyName.Text = "";
+            txtContactName.Text = "";
+            txtContactTitle.Text = "";
+            txtAddres.Text = "";
+        }
+
+
+
         #region tipado
         CustomersTableAdapter adaptador = new CustomersTableAdapter();
         private void btnObtenerTipado_Click(object sender, EventArgs e)
@@ -53,10 +71,8 @@ namespace Capa_Desconectada
             if (customer!=null)
             {
                 var objeto = customerRepository.ExtraerInfoCliente(customer);
-                //var listaClientes = new List<Customer> { objeto };
-                //gridTipado.DataSource = listaClientes;
-
-                txtEncontrado2.Text = objeto.CompanyName;
+                RellenarCampos(objeto);
+                txtCustomerID.Enabled=false;
             }
         }
         private void btnInsertarT_Click(object sender, EventArgs e)
@@ -71,7 +87,45 @@ namespace Capa_Desconectada
                 Limpiar();
             }
         }
+
+        private void btnActualizarTipado_Click(object sender, EventArgs e)
+        {
+            var fila = adaptador.GetDataByCustomerID(txtCustomerID.Text);
+
+            if (fila!=null)
+            {
+                var datoOriginal = customerRepository.ExtraerInfoCliente(fila);
+                var datosModificados = CrearCliente();
+
+                adaptador.Update(
+                    datosModificados.CustomerID,
+             datosModificados.CompanyName,
+             datosModificados.ContactName,
+             datosModificados.ContactTitle,
+             datosModificados.Address,
+             datosModificados.City,
+             datosModificados.Region,
+             datosModificados.PostalCode,
+             datosModificados.Country,
+             datosModificados.Phone,
+             datosModificados.Fax,
+             datoOriginal.CustomerID,
+             datoOriginal.CompanyName,
+             datoOriginal.ContactName,
+             datoOriginal.ContactTitle,
+             datoOriginal.Address,
+             datoOriginal.City,
+             datoOriginal.Region,
+             datoOriginal.PostalCode,
+             datoOriginal.Country,
+             datoOriginal.Phone,
+             datoOriginal.Fax);
+
+                MessageBox.Show("Usuario actualizado");
+            }
+        }
         #endregion
+
 
 
         #region no tipado
@@ -91,14 +145,8 @@ namespace Capa_Desconectada
             }
             else
             {
-                //var listaClientes = new List<Customer> { cliente };
-                //gridNoTipado.DataSource = listaClientes;
-
-                //txtEncontrado.Text = cliente.CompanyName;
-                var listad = new List<Customer> { cliente };
-                gridNoTipado.DataSource = listad;
                 RellenarCampos(cliente);
-
+                txtCustomerID.Enabled = false;
             }
         }
 
@@ -140,13 +188,5 @@ namespace Capa_Desconectada
         }
         #endregion
 
-        private void Limpiar()
-        {
-            txtCustomerID.Text = "";
-            txtCompanyName.Text = "";
-            txtContactName.Text = "";
-            txtContactTitle.Text = "";
-            txtAddres.Text = "";
-        }
     }
 }
