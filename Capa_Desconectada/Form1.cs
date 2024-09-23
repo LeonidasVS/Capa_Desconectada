@@ -97,29 +97,18 @@ namespace Capa_Desconectada
                 var datoOriginal = customerRepository.ExtraerInfoCliente(fila);
                 var datosModificados = CrearCliente();
 
-                adaptador.Update(
-                    datosModificados.CustomerID,
-             datosModificados.CompanyName,
-             datosModificados.ContactName,
-             datosModificados.ContactTitle,
-             datosModificados.Address,
-             datosModificados.City,
-             datosModificados.Region,
-             datosModificados.PostalCode,
-             datosModificados.Country,
-             datosModificados.Phone,
-             datosModificados.Fax,
-             datoOriginal.CustomerID,
-             datoOriginal.CompanyName,
-             datoOriginal.ContactName,
-             datoOriginal.ContactTitle,
-             datoOriginal.Address,
-             datoOriginal.City,
-             datoOriginal.Region,
-             datoOriginal.PostalCode,
-             datoOriginal.Country,
-             datoOriginal.Phone,
-             datoOriginal.Fax);
+                var filas = adaptador.ActualizacionCliente(
+                 datosModificados.CustomerID,
+                 datosModificados.CompanyName,
+                 datosModificados.ContactName,
+                 datosModificados.ContactTitle,
+                 datosModificados.Address,
+                 datosModificados.City,
+                 datosModificados.Region,
+                 datosModificados.PostalCode,
+                 datosModificados.Country,
+                 datosModificados.Phone,
+                 datosModificados.Fax, datoOriginal.CustomerID);
 
                 MessageBox.Show("Usuario actualizado");
             }
