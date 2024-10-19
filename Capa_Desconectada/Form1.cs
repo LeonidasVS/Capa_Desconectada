@@ -175,7 +175,16 @@ namespace Capa_Desconectada
             MessageBox.Show($"{actulaizadas} filas actulizadas");
             Limpiar();
         }
-        #endregion
 
+        private void btnEliminarDNT_Click(object sender, EventArgs e)
+        {
+            var eliminados = customerRepository.EliminarCliente(txtCustomerID.Text);
+            if (eliminados>0)
+            {
+                MessageBox.Show("Usuario Eliminado");
+                Limpiar();
+            }
+        }
+        #endregion
     }
 }
