@@ -112,6 +112,17 @@ namespace Capa_Desconectada
 
                 MessageBox.Show("Usuario actualizado");
             }
+
+        }
+
+        private void eliminarDT_Click(object sender, EventArgs e)
+        {
+            int filaeliminadas = adaptador.EliminarCliente(txtCustomerID.Text);
+            if (filaeliminadas>0)
+            {
+                MessageBox.Show("Usuario Eliminado");
+                Limpiar();
+            }
         }
         #endregion
 

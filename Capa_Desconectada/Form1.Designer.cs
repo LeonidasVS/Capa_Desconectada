@@ -56,6 +56,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.eliminarDT = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTipado)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -64,6 +65,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.eliminarDT);
             this.groupBox1.Controls.Add(this.btnActualizarTipado);
             this.groupBox1.Controls.Add(this.btnBuscarT);
             this.groupBox1.Controls.Add(this.label1);
@@ -79,7 +81,7 @@
             // 
             // btnActualizarTipado
             // 
-            this.btnActualizarTipado.Location = new System.Drawing.Point(206, 355);
+            this.btnActualizarTipado.Location = new System.Drawing.Point(263, 352);
             this.btnActualizarTipado.Name = "btnActualizarTipado";
             this.btnActualizarTipado.Size = new System.Drawing.Size(75, 23);
             this.btnActualizarTipado.TabIndex = 7;
@@ -89,7 +91,7 @@
             // 
             // btnBuscarT
             // 
-            this.btnBuscarT.Location = new System.Drawing.Point(66, 358);
+            this.btnBuscarT.Location = new System.Drawing.Point(6, 355);
             this.btnBuscarT.Name = "btnBuscarT";
             this.btnBuscarT.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarT.TabIndex = 7;
@@ -321,6 +323,16 @@
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // eliminarDT
+            // 
+            this.eliminarDT.Location = new System.Drawing.Point(139, 355);
+            this.eliminarDT.Name = "eliminarDT";
+            this.eliminarDT.Size = new System.Drawing.Size(75, 23);
+            this.eliminarDT.TabIndex = 8;
+            this.eliminarDT.Text = "Eliminar";
+            this.eliminarDT.UseVisualStyleBackColor = true;
+            this.eliminarDT.Click += new System.EventHandler(this.eliminarDT_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,6 +396,7 @@
         private System.Windows.Forms.Button btnActualizarTipado;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnEliminarDNT;
+        private System.Windows.Forms.Button eliminarDT;
     }
 }
 
