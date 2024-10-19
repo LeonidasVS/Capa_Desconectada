@@ -11,3 +11,4 @@ C:\Users\USUARIO\OneDrive\Documentos\ClasesProgra-II\Clase 06-09-2024\Capa_Desco
 C:\Users\USUARIO\OneDrive\Documentos\ClasesProgra-II\Clase 06-09-2024\Capa_Desconectada\Capa_Desconectada\bin\Debug\AccesoDatos.dll
 C:\Users\USUARIO\OneDrive\Documentos\ClasesProgra-II\Clase 06-09-2024\Capa_Desconectada\Capa_Desconectada\bin\Debug\AccesoDatos.pdb
 C:\Users\USUARIO\OneDrive\Documentos\ClasesProgra-II\Clase 06-09-2024\Capa_Desconectada\Capa_Desconectada\obj\Debug\Capa_Des.24E12519.Up2Date
+C:\Users\USUARIO\OneDrive\Documentos\ClasesProgra-II\Clase 06-09-2024\Capa_Desconectada\Capa_Desconectada\obj\Debug\Capa_Desconectada.Form2.resources
